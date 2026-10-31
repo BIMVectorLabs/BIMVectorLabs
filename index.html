@@ -167,7 +167,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .creds b{display:block;color:var(--ink);font-family:var(--display);font-size:15px}
 .creds span{font-size:13px;color:var(--muted)}
 .pd-gallery.wide{grid-template-columns:1fr}
-.pd-gallery.wide img{aspect-ratio:16/9;max-height:62vh}
+.pd-gallery.wide img,.pd-gallery.wide video{display:block;width:100%;aspect-ratio:16/9;max-height:62vh;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:#e9eef4}
 .pd-gallery.one{grid-template-columns:1fr}
 .pd-gallery.one figure{justify-items:center}
 .pd-gallery.one img{aspect-ratio:auto;width:auto;height:auto;max-height:62vh}
@@ -247,7 +247,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       </article>
       <article class="proj proj-real">
         <button class="proj-open" type="button" data-open="p-chalets" aria-haspopup="dialog">
-          <div class="thumb photo"><img src="chalets-render.jpg" alt="Render of the residential chalet complex around a central pool" loading="lazy"><span class="view">View details</span></div>
+          <div class="thumb photo"><img src="chalets-cover.jpg" alt="Beachfront render of the residential chalet complex with terraces and a central pool" loading="lazy"><span class="view">View details</span></div>
           <div class="body"><h3>Residential chalet complex</h3><p>Terraced chalets around a pool courtyard, 8,500 sqm. Architectural and structural model with construction drawings.</p><div class="meta"><span>LOD 300</span><span>Architecture</span><span>Structure</span></div></div>
         </button>
       </article>
@@ -341,7 +341,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <dialog id="p-chalets" class="pd" aria-labelledby="pd2-title">
   <div class="pd-top"><div><span class="eyebrow">Project</span><h2 id="pd2-title">Residential chalet complex</h2></div><button class="pd-close" type="button" aria-label="Close project details">&times;</button></div>
   <div class="pd-gallery wide">
-    <figure><img src="chalets.gif" alt="Animated exterior walkthrough of the chalet complex" onerror="this.onerror=null;this.src='chalets-exterior.gif'"><figcaption>Exterior animation</figcaption></figure>
+    <figure><video src="chalets.mp4" poster="chalets-poster.jpg" autoplay muted loop playsinline preload="auto" disablepictureinpicture controlslist="nodownload noplaybackrate" aria-label="Animated exterior walkthrough of the chalet complex"></video><figcaption>Exterior animation</figcaption></figure>
   </div>
   <dl class="pd-specs">
     <div><dt>Built-up area</dt><dd>8,500 sqm</dd></div>
@@ -400,6 +400,8 @@ document.querySelectorAll('dialog.pd').forEach(function(d){
 });
 
 document.addEventListener('contextmenu',function(e){if(e.target.closest('.thumb.photo, .pd-gallery'))e.preventDefault();});
+document.querySelectorAll('dialog.pd').forEach(function(d){var v=d.querySelector('video');if(!v)return;d.addEventListener('close',function(){v.pause();});});
+document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener('click',function(){var v=document.getElementById(b.dataset.open).querySelector('video');if(v){v.currentTime=0;var pr=v.play();if(pr&&pr.catch)pr.catch(function(){});}});});
 document.addEventListener('dragstart',function(e){if(e.target.tagName==='IMG')e.preventDefault();});
 document.querySelectorAll('img').forEach(function(im){im.setAttribute('draggable','false');});
 </script>
