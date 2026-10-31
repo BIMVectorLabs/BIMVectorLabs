@@ -162,7 +162,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .creds b{display:block;color:var(--ink);font-family:var(--display);font-size:15px}
 .creds span{font-size:13px;color:var(--muted)}
 .pd-gallery.wide{grid-template-columns:1fr}
-.pd-gallery.wide img,.pd-gallery.wide video{display:block;width:100%;aspect-ratio:16/9;max-height:62vh;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:#e9eef4}
+.pd-gallery.wide img{display:block;width:100%;aspect-ratio:16/9;max-height:62vh;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:#e9eef4}
 .pd-gallery.one{grid-template-columns:1fr}
 .pd-gallery.one figure{justify-items:center}
 .pd-gallery.one img{aspect-ratio:auto;width:auto;height:auto;max-height:62vh}
@@ -337,7 +337,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <dialog id="p-chalets" class="pd" aria-labelledby="pd2-title">
   <div class="pd-top"><div><span class="eyebrow">Project</span><h2 id="pd2-title">Residential chalet complex</h2></div><button class="pd-close" type="button" aria-label="Close project details">&times;</button></div>
   <div class="pd-gallery wide">
-    <figure><video src="chalets.mp4" poster="chalets-poster.jpg" autoplay muted loop playsinline preload="auto" disablepictureinpicture controlslist="nodownload noplaybackrate" aria-label="Animated exterior walkthrough of the chalet complex"></video><figcaption>Exterior animation</figcaption></figure>
+    <figure><img src="chalets-exterior.gif" alt="Animated exterior walkthrough of the chalet complex"><figcaption>Exterior animation</figcaption></figure>
   </div>
   <dl class="pd-specs">
     <div><dt>Built-up area</dt><dd>8,500 sqm</dd></div>
@@ -403,4 +403,45 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     if (!data.success) throw new Error(data.message || '');
     formElement.reset();
     statusMessage.style.color = '';
-    statusMessage.textContent = 'Thanks! Your message was sent. We\'
+    statusMessage.textContent = 'Thanks! Your message was sent. We\'ll reply within one business day.';
+  })
+  .catch(function(error) {
+    statusMessage.style.color = '#d9534f';
+    statusMessage.textContent = 'The message didn\'t send' + (error && error.message ? ' (' + error.message + ')' : '') + '. Please email info@bimvectorlabs.com directly.';
+  })
+  .finally(function() {
+    submitButton.disabled = false;
+  });
+});
+
+document.querySelectorAll('[data-open]').forEach(function(trigger) {
+  trigger.addEventListener('click', function() {
+    const dialogElement = document.getElementById(trigger.dataset.open);
+    dialogElement.showModal();
+  });
+});
+
+document.querySelectorAll('dialog.pd').forEach(function(dialogElement) {
+  dialogElement.querySelector('.pd-close').addEventListener('click', function() {
+    dialogElement.close();
+  });
+  dialogElement.addEventListener('click', function(event) {
+    if (event.target === dialogElement) dialogElement.close();
+  });
+});
+
+document.addEventListener('contextmenu', function(event) {
+  if (event.target.closest('.thumb.photo, .pd-gallery')) event.preventDefault();
+});
+
+document.addEventListener('dragstart', function(event) {
+  if (event.target.tagName === 'IMG') event.preventDefault();
+});
+
+document.querySelectorAll('img').forEach(function(imageElement) {
+  imageElement.setAttribute('draggable', 'false');
+});
+</script>
+
+</body>
+</html>
