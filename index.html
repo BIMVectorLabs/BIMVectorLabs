@@ -5,13 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <link rel="icon" href="logo.jpg">
 <title>BIM Vector Labs</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="BIM Vector Labs: BIM modelling, MEP coordination, clash detection and Revit automation for construction projects.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Manrope:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <style>
 html,body{margin:0}img{max-width:100%}
-/* Layout: one scrolling page, sticky header, sections on a faint drafting grid; blue + teal taken from the logo */
 :root{
   --bg:#ffffff; --surface:#f3f7fc; --line:#dbe5f1; --ink:#14304f; --muted:#5a6f88;
   --blue:#1f6fe0; --teal:#22b8b0; --navy:#1b3556; --chip:#ffffff;
@@ -41,7 +39,6 @@ a{color:var(--blue)}
 .btn-ghost{border-color:var(--line);color:var(--ink);background:transparent}
 .btn-ghost:hover{border-color:var(--blue)}
 
-/* header */
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
@@ -54,7 +51,6 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:col
 .links a.cta{color:#fff;background:var(--blue)}
 @media (max-width:760px){.links a:not(.cta){display:none}.brand b{font-size:15px}}
 
-/* hero */
 .hero{background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;border-bottom:1px solid var(--line)}
 .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-block:80px}
 .hero h1{font-size:clamp(34px,5vw,54px);font-weight:800;margin:16px 0 20px}
@@ -72,7 +68,6 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:col
 .lod .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--teal))}
 @media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-block:56px;gap:36px}}
 
-/* sections */
 section{padding-block:88px;scroll-margin-top:70px}
 .head{display:grid;gap:12px;max-width:640px;margin-bottom:44px}
 .head h2{font-size:clamp(28px,3.4vw,38px);font-weight:700}
@@ -175,7 +170,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .pd-gallery figure{position:relative}
 .pd-gallery figure::after{content:"";position:absolute;inset:0 0 22px 0}
 </style>
-
 </head>
 <body>
 <header>
@@ -222,10 +216,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     </div>
     <div class="services">
       <div class="svc"><svg viewBox="0 0 32 32"><path d="M16 3 28 10v12L16 29 4 22V10z"/><path d="M4 10l12 7 12-7M16 17v12"/></svg><h3>3D BIM Modelling</h3><p>Architectural, structural and MEP models built from your drawings or point clouds.</p><span class="stack">Revit · IFC · LOD 100–500</span></div>
-      <div class="svc"><svg viewBox="0 0 32 32"><circle cx="12" cy="16" r="8"/><circle cx="20" cy="16" r="8"/></svg><h3>Clash Detection</h3><p>MEP vs structure, MEP vs MEP and ceiling clearance checks, with a clear issue report for every clash.</p><span class="stack">Navisworks</span></div>
+      <div class="svc"><svg viewBox="0 0 32 32"><circle cx="12" cy="16" r="8"/><circle cx="20" cy="16" r="8"/></svg><h3>Clash Detection</h3><p>MEP vs structure, MEP vs MEP and ceiling clearance checks, with a clear issue report for every clash.</p><span class="stack">Navisworks · BCF reports</span></div>
       <div class="svc"><svg viewBox="0 0 32 32"><path d="M5 9h22M5 16h22M5 23h22"/><circle cx="11" cy="9" r="2.5"/><circle cx="21" cy="16" r="2.5"/><circle cx="14" cy="23" r="2.5"/></svg><h3>MEP Coordination</h3><p>Routing of ducts, pipes, cable trays and sprinklers so every service fits before installation.</p><span class="stack">HVAC · Plumbing · Electrical · FF</span></div>
       <div class="svc"><svg viewBox="0 0 32 32"><rect x="5" y="4" width="22" height="24" rx="1"/><path d="M9 10h14M9 15h14M9 20h8"/></svg><h3>Shop &amp; Construction Drawings</h3><p>Sheets, sections and schedules generated straight from the coordinated model.</p><span class="stack">Sheets · Schedules · Quantities</span></div>
-      <div class="svc"><svg viewBox="0 0 32 32"><path d="M11 9 4 16l7 7M21 9l7 7-7 7M18 6l-4 20"/></svg><h3>Revit Automation</h3><p>Custom pyRevit plugins built with Python and AI that automate repetitive tasks, speed up modelling and keep models consistent.</p><span class="stack">pyRevit · Python · AI</span></div>
+      <div class="svc"><svg viewBox="0 0 32 32"><path d="M11 9 4 16l7 7M21 9l7 7-7 7M18 6l-4 20"/></svg><h3>Revit Automation</h3><p>Custom add-ins and Dynamo scripts that remove repetitive tasks and keep models consistent.</p><span class="stack">Dynamo · Python · C# API</span></div>
       <div class="svc"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="3"/><circle cx="6" cy="8" r="1.5"/><circle cx="26" cy="9" r="1.5"/><circle cx="8" cy="25" r="1.5"/><circle cx="25" cy="24" r="1.5"/><path d="M7 9l7 5M25 10l-7 4M9 24l5-6M24 23l-6-5"/></svg><h3>Scan to BIM &amp; Digital Twins</h3><p>Laser-scan data turned into accurate models of existing buildings, ready for renovation or facility management.</p><span class="stack">Point clouds · COBie</span></div>
     </div>
   </div>
@@ -323,6 +317,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     </form>
   </div>
 </section>
+
 <dialog id="p-healthcare" class="pd" aria-labelledby="pd-title">
   <div class="pd-top"><div><span class="eyebrow">Project</span><h2 id="pd-title">Healthcare clinics building</h2></div><button class="pd-close" type="button" aria-label="Close project details">&times;</button></div>
   <div class="pd-gallery">
@@ -338,6 +333,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div><dt>Deliverables</dt><dd>Federated model, clash report, shop drawings</dd></div>
   </dl>
 </dialog>
+
 <dialog id="p-chalets" class="pd" aria-labelledby="pd2-title">
   <div class="pd-top"><div><span class="eyebrow">Project</span><h2 id="pd2-title">Residential chalet complex</h2></div><button class="pd-close" type="button" aria-label="Close project details">&times;</button></div>
   <div class="pd-gallery wide">
@@ -352,6 +348,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div><dt>Deliverables</dt><dd>Coordinated model, construction drawings</dd></div>
   </dl>
 </dialog>
+
 <dialog id="p-villa" class="pd" aria-labelledby="pd3-title">
   <div class="pd-top"><div><span class="eyebrow">Project</span><h2 id="pd3-title">Private villa</h2></div><button class="pd-close" type="button" aria-label="Close project details">&times;</button></div>
   <div class="pd-gallery one">
@@ -371,40 +368,39 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <footer>
   <div class="wrap"><span>© <span id="yr">2026</span> BIM Vector Labs</span></div>
 </footer>
+
 <a class="wa wa-float" href="https://wa.me/9613987924" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.2 8.3c.3-.4.7-.4.9 0l.8 1.6c.1.3 0 .6-.2.8l-.5.5c.6 1.2 1.6 2.2 2.8 2.8l.5-.5c.2-.2.5-.3.8-.2l1.6.8c.4.2.4.6 0 .9-.7.7-1.7 1-2.6.6a8.4 8.4 0 0 1-4.7-4.7c-.4-.9-.1-1.9.6-2.6z" fill="currentColor"/></svg></a>
 
 <script>
-var ENDPOINT='https://api.web3forms.com/submit';
-document.getElementById('yr').textContent=new Date().getFullYear();
-document.getElementById('contactForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  var f=e.target, msg=document.getElementById('formMsg'), btn=f.querySelector('button[type=submit]');
-  if(!f.name.value.trim()||!f.email.value.includes('@')||!f.message.value.trim()){msg.style.color='#d9534f';msg.textContent='Please fill in your name, a valid email and project details.';return;}
-  if(!ENDPOINT){msg.style.color='';msg.textContent='Preview only. On your live site this message goes to info@bimvectorlabs.com.';return;}
-  btn.disabled=true;msg.style.color='';msg.textContent='Sending…';
-  var data=Object.fromEntries(new FormData(f));
-  fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
-  .then(function(r){return r.json();})
-  .then(function(d){
-    if(!d.success)throw new Error(d.message||'');
-    f.reset();msg.style.color='';msg.textContent='Thanks! Your message was sent. We\'ll reply within one business day.';
+const formEndpoint = 'https://api.web3forms.com/submit';
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const formElement = event.target;
+  const statusMessage = document.getElementById('formMsg');
+  const submitButton = formElement.querySelector('button[type=submit]');
+  
+  if (!formElement.name.value.trim() || !formElement.email.value.includes('@') || !formElement.message.value.trim()) {
+    statusMessage.style.color = '#d9534f';
+    statusMessage.textContent = 'Please fill in your name, a valid email and project details.';
+    return;
+  }
+  
+  submitButton.disabled = true;
+  statusMessage.style.color = '';
+  statusMessage.textContent = 'Sending…';
+  
+  const payload = Object.fromEntries(new FormData(formElement));
+  
+  fetch(formEndpoint, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(payload)
   })
-  .catch(function(err){msg.style.color='#d9534f';msg.textContent='The message didn\'t send'+(err&&err.message?' ('+err.message+')':'')+'. Please email info@bimvectorlabs.com directly.';})
-  .finally(function(){btn.disabled=false;});
-});
-
-document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener('click',function(){var d=document.getElementById(b.dataset.open);d.showModal();});});
-document.querySelectorAll('dialog.pd').forEach(function(d){
-  d.querySelector('.pd-close').addEventListener('click',function(){d.close();});
-  d.addEventListener('click',function(e){if(e.target===d)d.close();});
-});
-
-document.addEventListener('contextmenu',function(e){if(e.target.closest('.thumb.photo, .pd-gallery'))e.preventDefault();});
-document.querySelectorAll('dialog.pd').forEach(function(d){var v=d.querySelector('video');if(!v)return;d.addEventListener('close',function(){v.pause();});});
-document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener('click',function(){var v=document.getElementById(b.dataset.open).querySelector('video');if(v){v.currentTime=0;var pr=v.play();if(pr&&pr.catch)pr.catch(function(){});}});});
-document.addEventListener('dragstart',function(e){if(e.target.tagName==='IMG')e.preventDefault();});
-document.querySelectorAll('img').forEach(function(im){im.setAttribute('draggable','false');});
-</script>
-
-</body>
-</html>
+  .then(function(res) { return res.json(); })
+  .then(function(data) {
+    if (!data.success) throw new Error(data.message || '');
+    formElement.reset();
+    statusMessage.style.color = '';
+    statusMessage.textContent = 'Thanks! Your message was sent. We\'
