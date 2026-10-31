@@ -161,6 +161,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @media (max-width:460px){.pd-specs{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.thumb.photo img{transition:none}}
 .hp{display:none!important}
+.creds{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:12px}
+.creds li{display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--line);border-radius:10px;background:var(--surface);min-width:0}
+.creds svg{width:28px;height:28px;flex:none;fill:none;stroke:var(--blue);stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
+.creds b{display:block;color:var(--ink);font-family:var(--display);font-size:15px}
+.creds span{font-size:13px;color:var(--muted)}
+.pd-gallery.wide{grid-template-columns:1fr}
+.pd-gallery.wide img{aspect-ratio:16/9;max-height:62vh}
+.pd-gallery.one{grid-template-columns:1fr}
+.pd-gallery.one figure{justify-items:center}
+.pd-gallery.one img{aspect-ratio:auto;width:auto;height:auto;max-height:62vh}
+.thumb.photo img,.pd-gallery img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.pd-gallery figure{position:relative}
+.pd-gallery figure::after{content:"";position:absolute;inset:0 0 22px 0}
 </style>
 
 </head>
@@ -228,20 +241,23 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="projects">
       <article class="proj proj-real">
         <button class="proj-open" type="button" data-open="p-healthcare" aria-haspopup="dialog">
-          <div class="thumb photo"><img src="healthcare-exterior.jpg" alt="Exterior render of Med 5 Clinics" loading="lazy"><span class="view">View details</span></div>
-          <div class="body"><h3>Med 5 Clinics</h3><p>11 floors + 2 basements, 6,250 sqm. Architectural and MEP model with full clash detection.</p><div class="meta"><span>LOD 350–400</span><span>MEP</span><span>Clash detection</span></div></div>
+          <div class="thumb photo"><img src="healthcare-exterior.jpg" alt="Exterior render of the healthcare clinics building" loading="lazy"><span class="view">View details</span></div>
+          <div class="body"><h3>Healthcare clinics building</h3><p>11 floors + 2 basements, 6,250 sqm. Architectural and MEP model with full clash detection.</p><div class="meta"><span>LOD 350–400</span><span>MEP</span><span>Clash detection</span></div></div>
         </button>
       </article>
-      <article class="proj">
-        <div class="thumb"><svg viewBox="0 0 60 60"><path d="M6 50h48M10 50V26h40v24M10 26l20-14 20 14M24 50V36h12v14"/></svg></div>
-        <div class="body"><h3>Hospital wing</h3><p>Medical gas, HVAC and electrical routing in a tight ceiling void, with shop drawings for each trade.</p><div class="meta"><span>LOD 400</span><span>Shop drawings</span></div></div>
+      <article class="proj proj-real">
+        <button class="proj-open" type="button" data-open="p-chalets" aria-haspopup="dialog">
+          <div class="thumb photo"><img src="chalets-render.jpg" alt="Render of the residential chalet complex around a central pool" loading="lazy"><span class="view">View details</span></div>
+          <div class="body"><h3>Residential chalet complex</h3><p>Terraced chalets around a pool courtyard, 8,500 sqm. Architectural and structural model with construction drawings.</p><div class="meta"><span>LOD 300</span><span>Architecture</span><span>Structure</span></div></div>
+        </button>
       </article>
-      <article class="proj">
-        <div class="thumb"><svg viewBox="0 0 60 60"><path d="M8 48V18h44v30zM8 28h44M8 38h44M22 18v30M38 18v30"/><circle cx="30" cy="10" r="3"/></svg></div>
-        <div class="body"><h3>Heritage building survey</h3><p>Point-cloud scan converted to an as-built model for renovation planning.</p><div class="meta"><span>LOD 500</span><span>Scan to BIM</span></div></div>
+      <article class="proj proj-real">
+        <button class="proj-open" type="button" data-open="p-villa" aria-haspopup="dialog">
+          <div class="thumb photo"><img src="villa-render.jpg" alt="Render of a stone-clad private villa with rooftop pool" loading="lazy"><span class="view">View details</span></div>
+          <div class="body"><h3>Private villa</h3><p>Stone-clad villa with glazed living floor and rooftop pool, 1,400 sqm. Architectural and structural model with construction drawings.</p><div class="meta"><span>LOD 300</span><span>Architecture</span><span>Structure</span></div></div>
+        </button>
       </article>
     </div>
-    <p class="note">* Sample projects. Replace with your own project names, photos and results.</p>
   </div>
 </section>
 
@@ -256,6 +272,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <p><strong>BIM Vector Labs</strong> is a BIM studio that combines construction know-how with software. We work with contractors, consultants and developers who want fewer surprises on site.</p>
         <p>Every model we deliver is checked against structure, services and ceilings. When we see the same task repeated, we build a tool to automate it, so your project moves faster and costs less.</p>
         <p>We follow ISO 19650 information management and deliver in Revit, IFC and Navisworks formats.</p>
+        <p>Our founder is a <strong>PMP® certified</strong> project manager and a <strong>certified BIM professional</strong>, so every project is run with clear scope, schedule and communication.</p>
+        <ul class="creds" aria-label="Founder certifications">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/><path d="m9.5 9 1.8 1.8L14.8 7.3"/></svg><div><b>PMP® Certified</b><span>Project Management Professional</span></div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/><path d="m9.5 9 1.8 1.8L14.8 7.3"/></svg><div><b>BIM Certified</b><span>Building Information Modelling</span></div></li>
+        </ul>
       </div>
     </div>
     <div>
@@ -280,7 +301,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       </div>
       <dl class="details">
         <div><dt>Email</dt><dd><a href="mailto:info@bimvectorlabs.com">info@bimvectorlabs.com</a></dd></div>
-        <div><dt>Phone</dt><dd><a href="tel:+96170020690">+961 70 020 690</a></dd></div>
+        <div><dt>Phone</dt><dd><a href="tel:+9613987924">+961 3 987 924</a></dd></div>
         <div><dt>Office</dt><dd>Zahle, Lebanon</dd></div>
       </dl>
     </div>
@@ -303,7 +324,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   </div>
 </section>
 <dialog id="p-healthcare" class="pd" aria-labelledby="pd-title">
-  <div class="pd-top"><div><span class="eyebrow">Project</span><h2 id="pd-title">Med 5 Clinics</h2></div><button class="pd-close" type="button" aria-label="Close project details">&times;</button></div>
+  <div class="pd-top"><div><span class="eyebrow">Project</span><h2 id="pd-title">Healthcare clinics building</h2></div><button class="pd-close" type="button" aria-label="Close project details">&times;</button></div>
   <div class="pd-gallery">
     <figure><img src="healthcare-mep.jpg" alt="Cutaway MEP render showing ducts, pipes and sprinklers on every floor"><figcaption>MEP model render</figcaption></figure>
     <figure><img src="healthcare-exterior.jpg" alt="Exterior render of the building"><figcaption>Exterior render</figcaption></figure>
@@ -315,6 +336,34 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div><dt>Software</dt><dd>Revit, Navisworks, Lumion</dd></div>
     <div><dt>Level of development</dt><dd>LOD 350–400</dd></div>
     <div><dt>Deliverables</dt><dd>Federated model, clash report, shop drawings</dd></div>
+  </dl>
+</dialog>
+<dialog id="p-chalets" class="pd" aria-labelledby="pd2-title">
+  <div class="pd-top"><div><span class="eyebrow">Project</span><h2 id="pd2-title">Residential chalet complex</h2></div><button class="pd-close" type="button" aria-label="Close project details">&times;</button></div>
+  <div class="pd-gallery wide">
+    <figure><img src="chalets.gif" alt="Animated exterior walkthrough of the chalet complex" onerror="this.onerror=null;this.src='chalets-exterior.jpg'"><figcaption>Exterior animation</figcaption></figure>
+  </div>
+  <dl class="pd-specs">
+    <div><dt>Built-up area</dt><dd>8,500 sqm</dd></div>
+    <div><dt>Building type</dt><dd>Residential chalet complex</dd></div>
+    <div><dt>Scope</dt><dd>Architectural + Structural</dd></div>
+    <div><dt>Software</dt><dd>Revit, Lumion</dd></div>
+    <div><dt>Level of development</dt><dd>LOD 300</dd></div>
+    <div><dt>Deliverables</dt><dd>Coordinated model, construction drawings</dd></div>
+  </dl>
+</dialog>
+<dialog id="p-villa" class="pd" aria-labelledby="pd3-title">
+  <div class="pd-top"><div><span class="eyebrow">Project</span><h2 id="pd3-title">Private villa</h2></div><button class="pd-close" type="button" aria-label="Close project details">&times;</button></div>
+  <div class="pd-gallery one">
+    <figure><img src="villa-render.jpg" alt="Render of the private villa from above, showing the stone facade, glazed floor and rooftop pool"><figcaption>Exterior render</figcaption></figure>
+  </div>
+  <dl class="pd-specs">
+    <div><dt>Built-up area</dt><dd>1,400 sqm</dd></div>
+    <div><dt>Building type</dt><dd>Residential</dd></div>
+    <div><dt>Scope</dt><dd>Architectural + Structural</dd></div>
+    <div><dt>Software</dt><dd>Revit, Lumion</dd></div>
+    <div><dt>Level of development</dt><dd>LOD 300</dd></div>
+    <div><dt>Deliverables</dt><dd>Coordinated model, construction drawings</dd></div>
   </dl>
 </dialog>
 </main>
@@ -349,6 +398,10 @@ document.querySelectorAll('dialog.pd').forEach(function(d){
   d.querySelector('.pd-close').addEventListener('click',function(){d.close();});
   d.addEventListener('click',function(e){if(e.target===d)d.close();});
 });
+
+document.addEventListener('contextmenu',function(e){if(e.target.closest('.thumb.photo, .pd-gallery'))e.preventDefault();});
+document.addEventListener('dragstart',function(e){if(e.target.tagName==='IMG')e.preventDefault();});
+document.querySelectorAll('img').forEach(function(im){im.setAttribute('draggable','false');});
 </script>
 
 </body>
