@@ -112,7 +112,9 @@ section{padding-block:88px;scroll-margin-top:70px}
 .details div{display:grid;gap:2px}
 .details dt{font:500 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .details dd{margin:0;font-weight:600;font-size:17px;user-select:all}
-.ph{color:var(--muted);font-weight:500;font-style:italic}
+.trust-card{margin-top:8px;padding:16px;background:var(--surface);border:1px solid var(--line);border-radius:10px;display:grid;gap:6px}
+.trust-card h4{font-size:14px;font-family:var(--display);color:var(--ink);display:flex;align-items:center;gap:6px}
+.trust-card p{font-size:13.5px;color:var(--muted);line-height:1.5}
 form{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:28px;display:grid;gap:16px;min-width:0}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 label{display:grid;gap:6px;font-weight:600;font-size:14px}
@@ -265,7 +267,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div class="text">
         <p><strong>BIM Vector Labs</strong> is a BIM studio that combines construction know-how with software. We work with contractors, consultants and developers who want fewer surprises on site.</p>
         <p>Every model we deliver is checked against structure, services and ceilings. When we see the same task repeated, we build a tool to automate it, so your project moves faster and costs less.</p>
-        <p>We follow ISO 19650 information management and deliver in Revit, IFC and Navisworks formats.</p>
+        <p>We follow ISO 19650 information management standards. To give our global partners complete peace of mind, we support escrow contracting and direct agreement execution through <strong>Upwork</strong>, ensuring transparent payments and zero-risk project delivery.</p>
         <p>Our founder is a <strong>PMP® certified</strong> project manager and a <strong>certified BIM professional</strong>, so every project is run with clear scope, schedule and communication.</p>
         <ul class="creds" aria-label="Founder certifications">
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/><path d="m9.5 9 1.8 1.8L14.8 7.3"/></svg><div><b>PMP® Certified</b><span>Project Management Professional</span></div></li>
@@ -298,6 +300,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <div><dt>Phone</dt><dd><a href="tel:+9613987924">+961 3 987 924</a></dd></div>
         <div><dt>Office</dt><dd>Zahle, Lebanon</dd></div>
       </dl>
+      <div class="trust-card">
+        <h4>🔒 Secure International Contracts</h4>
+        <p>To guarantee complete payment safety and financial escrow protection for international clients, we are fully prepared to sign contracts and manage payments via <strong>Upwork Direct Contracts</strong>.</p>
+      </div>
     </div>
     <form id="contactForm" method="POST" action="https://api.web3forms.com/submit" novalidate>
       <input type="hidden" name="access_key" value="6136c61d-4a35-4744-a2a3-76a0c1c431e6">
